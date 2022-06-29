@@ -1,6 +1,4 @@
 const express = require("express");
-const axios = require("axios");
-const bodyParser = require("body-parser");
 const MongoClient = require('mongodb').MongoClient
 const cors = require('cors');
 const { resolveInclude } = require('ejs');
@@ -9,27 +7,24 @@ const { response } = require('express');
 const app = express();
 require('dotenv').config();
 
-let db, dbCollection;
+let db, 
+    dbConnectionString = process.env.MONGODB_URI,
+    dbName = "raccoonplace",
+    collection
 
-const url = process.env.MONGODB_URI;
-const dbName = "raccoonplace";
+    MongoClient.connect(dbConnectionString)
+    .then(client => {
+        console.log('Connected to Database')
+        db = client.db(dbName)
+        collection = db.collection('raccoonImages')
+    })
 
 app.set("json spaces", 2);
 app.set('view engine', 'ejs');
 app.use(express.urlencoded({ encoded: true }));
 app.use(express.json());
 app.use(express.static("public"));
-
-
-app.listen(process.env.PORT || PORT, () => {
-    MongoClient.connect(url, { useNewUrlParser: true, useUnifiedTopology: true }, (error, client) => {
-        if(error) {
-            throw error;
-        }
-        db = client.db(dbName);
-        console.log("Connected to `" + dbName + "`!");
-    });
-})
+app.use(cors());
 
 app.get("/", (req, res) => {
     db.collection('raccoons').find().toArray((err, result) => {
@@ -47,3 +42,6 @@ app.get("/getData", (req, res) => {
     })
 })
 
+app.listen(process.env.PORT || PORT, () => {
+    console.log('it do be raccooning time :0')
+})

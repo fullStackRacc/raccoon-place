@@ -6,7 +6,6 @@ const cors = require('cors');
 const { resolveInclude } = require('ejs');
 const { response } = require('express');
 
-const PORT = process.env.PORT;
 const app = express();
 require('dotenv').config();
 
@@ -22,7 +21,7 @@ app.use(express.json());
 app.use(express.static("public"));
 
 
-app.listen(PORT, () => {
+app.listen(process.env.PORT || PORT, () => {
     MongoClient.connect(url, { useNewUrlParser: true, useUnifiedTopology: true }, (error, client) => {
         if(error) {
             throw error;

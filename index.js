@@ -11,7 +11,7 @@ let db,
     dbConnectionString = process.env.MONGODB_URI,
     dbName = "raccoonplace",
     collection
-    
+
     MongoClient.connect(dbConnectionString)
     .then(client => {
         console.log('Connected to Database')

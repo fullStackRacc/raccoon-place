@@ -11,7 +11,7 @@ require('dotenv').config();
 
 let db, dbCollection;
 
-const url = process.env.DB_STRING;
+const url = process.env.MONGODB_URI;
 const dbName = "raccoonplace";
 
 app.set("json spaces", 2);

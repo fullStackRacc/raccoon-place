@@ -6,7 +6,7 @@ const cors = require('cors');
 const { resolveInclude } = require('ejs');
 const { response } = require('express');
 
-const PORT = process.env.PORT || 80;
+const PORT = process.env.PORT;
 const app = express();
 require('dotenv').config();
 
@@ -17,8 +17,8 @@ const dbName = "raccoonplace";
 
 app.set("json spaces", 2);
 app.set('view engine', 'ejs');
-app.use(bodyParser.urlencoded({ encoded: true }));
-app.use(bodyParser.json());
+app.use(express.urlencoded({ encoded: true }));
+app.use(express.json());
 app.use(express.static("public"));
 
 

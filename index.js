@@ -6,7 +6,7 @@ const cors = require('cors');
 const { resolveInclude } = require('ejs');
 const { response } = require('express');
 
-const PORT = process.env.PORT || 8000;
+const PORT = process.env.PORT || 80;
 const app = express();
 require('dotenv').config();
 

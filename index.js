@@ -43,5 +43,5 @@ app.get("/getData", (req, res) => {
 })
 
 app.listen(process.env.PORT || PORT, () => {
-    console.log('it do be raccooning time :0')
+    console.log('it do be raccooning time')
 })

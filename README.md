@@ -25,5 +25,7 @@ Beloise Huffstutler
 [@fullStackRacc](https://twitter.com/fullStackRacc)
 
 ## Version History
+* 0.2
+    * Live version [here](http://raccoon.place) 
 * 0.1
     * Initial Release

@@ -19,7 +19,7 @@
   }
   
   body {
-    background-color: #353836;
+    background-color: #121212;
     color: white;
     font-family: "Poppins", sans-serif;
   }
@@ -49,7 +49,7 @@
   
   ul {
     list-style: none;
-    background: #121212;
+    background: #1d1f1d;
     height: 100%;
     display: flex;
     align-items: center;
@@ -118,6 +118,95 @@
     margin-bottom: 10px;
   }
   
+ 
+  img {
+    width: 40%;
+    height: auto;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  h1, p, code {
+    text-align: center;
+    margin: 0 auto;
+    width: 60%;
+    padding: 15px 0;
+  }
+
+  @media only screen and (min-width: 1024px) {
+    section {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 60%;
+      height: 80%;
+      padding: 5px;
+      padding-top: 5px;
+      background: rgba(255, 255, 255, .06);
+      border-radius: 25px;
+      box-shadow: 10px 15px 10px #ec468b;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+  
+
+    img {
+      width: 50%;
+      height: auto;
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+      object-fit: cover;
+    }
+  
+    h1, p, code {
+      text-align: center;
+      margin: 0 auto;
+      width: 60%;
+      padding: 15px 0;
+    }
+  }
+
+  @media only screen and (min-width: 601px) and (max-width: 1023px) {
+    section {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 60%;
+      height: 80%;
+      padding: 5px;
+      padding-top: 5px;
+      background: rgba(255, 255, 255, .06);
+      border-radius: 25px;
+      box-shadow: 10px 15px 10px #ec468b;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+  
+
+    img {
+      width: 35%;
+      height: auto;
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+    }
+  
+    h1, p, code {
+      text-align: center;
+      margin: 0 auto;
+      width: 60%;
+      padding: 15px 0;
+    }
+  }
+
   @media only screen and (max-width: 600px) {
     header nav {
       display: none;
@@ -126,24 +215,27 @@
     #hamburger-icon {
       display: block;
     }
+
+
+    img {
+      width: 75%;
+      height: auto;
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    h1, p, code {
+      text-align: center;
+    }
+
+    p {
+      padding-top: 10px;
+    }
   }
   
   /******************************************
   /* ADDITIONAL STYLES
   /*******************************************/
 
-  img {
-    width: 75%;
-    height: auto;
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-  }
 
-h1, p, code {
-  text-align: center;
-}
-
-p {
-  padding-top: 10px;
-}

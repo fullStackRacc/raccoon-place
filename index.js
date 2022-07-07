@@ -42,6 +42,18 @@ app.get("/getData", (req, res) => {
     })
 })
 
+app.get("/secretRaccoonLair", (req, res) => {
+    res.render('secretRaccoonLair.ejs')
+})
+
+app.post("/upload", (req, res) => {
+    db.collection("raccoons").insertOne({img: req.body.image, alt: req.body.alt, likes: 0, dislikes: 0}, (err, result) => {
+        if (err) return console.log(err)
+        console.log('saved to database')
+        res.redirect('/secretRaccoonLair')
+    })
+})
+
 app.listen(process.env.PORT || PORT, () => {
     console.log('it do be raccooning time')
 })
